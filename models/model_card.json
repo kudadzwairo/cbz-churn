@@ -1,0 +1,223 @@
+{
+  "selected_model": "Random Forest",
+  "calibrated": true,
+  "decision_threshold": 0.4,
+  "snapshot_date": "2025-07-01",
+  "rows": 80000,
+  "churn_rate": 0.18,
+  "selection_reason": "Random Forest had the highest validation F1 (0.470) among logistic regression, the decision tree, random forest, and XGBoost. The staff tool uses the calibrated pipeline. Holdout ROC-AUC is 0.785.",
+  "selected_test_metrics": {
+    "accuracy": 0.7159,
+    "precision": 0.3544,
+    "recall": 0.7038,
+    "f1": 0.4715,
+    "roc_auc": 0.7848,
+    "pr_auc": 0.4245
+  },
+  "deployed_test_metrics": {
+    "accuracy": 0.8117,
+    "precision": 0.4688,
+    "recall": 0.3438,
+    "f1": 0.3966,
+    "roc_auc": 0.7848,
+    "pr_auc": 0.4245
+  },
+  "comparison": [
+    {
+      "model": "Decision Tree",
+      "selected": false,
+      "validation_f1": 0.4556,
+      "cv_f1": 0.4501,
+      "cv_roc_auc": 0.7766,
+      "test": {
+        "accuracy": 0.6817,
+        "precision": 0.3308,
+        "recall": 0.7514,
+        "f1": 0.4594,
+        "roc_auc": 0.7737,
+        "pr_auc": 0.3922
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "selected": false,
+      "validation_f1": 0.4675,
+      "cv_f1": 0.4704,
+      "cv_roc_auc": 0.7932,
+      "test": {
+        "accuracy": 0.6941,
+        "precision": 0.341,
+        "recall": 0.75,
+        "f1": 0.4688,
+        "roc_auc": 0.7916,
+        "pr_auc": 0.441
+      }
+    },
+    {
+      "model": "Random Forest",
+      "selected": true,
+      "validation_f1": 0.4702,
+      "cv_f1": 0.4692,
+      "cv_roc_auc": 0.7853,
+      "test": {
+        "accuracy": 0.7159,
+        "precision": 0.3544,
+        "recall": 0.7038,
+        "f1": 0.4715,
+        "roc_auc": 0.7848,
+        "pr_auc": 0.4245
+      }
+    },
+    {
+      "model": "XGBoost",
+      "selected": false,
+      "validation_f1": 0.4656,
+      "cv_f1": 0.466,
+      "cv_roc_auc": 0.7904,
+      "test": {
+        "accuracy": 0.6806,
+        "precision": 0.3318,
+        "recall": 0.7642,
+        "f1": 0.4627,
+        "roc_auc": 0.7896,
+        "pr_auc": 0.4347
+      }
+    }
+  ],
+  "feature_importance": [
+    {
+      "feature": "credit_score",
+      "label": "Credit score",
+      "importance": 0.0769
+    },
+    {
+      "feature": "engagement_score",
+      "label": "Engagement",
+      "importance": 0.0126
+    },
+    {
+      "feature": "services_held",
+      "label": "Services held",
+      "importance": 0.0107
+    },
+    {
+      "feature": "loyalty_level",
+      "label": "Loyalty",
+      "importance": 0.0073
+    },
+    {
+      "feature": "products_held",
+      "label": "Products held",
+      "importance": 0.0047
+    },
+    {
+      "feature": "account_age_days",
+      "label": "Account age",
+      "importance": 0.0034
+    },
+    {
+      "feature": "age",
+      "label": "Age",
+      "importance": 0.0017
+    },
+    {
+      "feature": "tenure_years",
+      "label": "Tenure",
+      "importance": 0.0012
+    },
+    {
+      "feature": "active_member",
+      "label": "Active member",
+      "importance": 0.0007
+    },
+    {
+      "feature": "customer_segment",
+      "label": "Segment",
+      "importance": 0.0003
+    },
+    {
+      "feature": "origin_province",
+      "label": "Province",
+      "importance": 0.0001
+    }
+  ],
+  "bands": [
+    {
+      "status": "Retained",
+      "range": "Under 15%",
+      "meaning": "Below the book churn rate. No campaign."
+    },
+    {
+      "status": "At-Risk Low",
+      "range": "15% to 28%",
+      "meaning": "Light check-in or a CBZ Touch prompt."
+    },
+    {
+      "status": "At-Risk Medium",
+      "range": "28% to 40%",
+      "meaning": "Personalised contact within two weeks."
+    },
+    {
+      "status": "At-Risk High",
+      "range": "40% to 50%",
+      "meaning": "Priority call and a fee review this week."
+    },
+    {
+      "status": "Churned",
+      "range": "50% and above",
+      "meaning": "Call within 48 hours. The chance of leaving is at least three times the book rate."
+    }
+  ],
+  "imbalance_note": "Churners are 18.0% of the 80,000 profiles. Accuracy alone would flatter a model that rarely predicts churn, so the study also reports precision, recall, F1, and ROC-AUC. Class weights and XGBoost's scale_pos_weight give the minority class a louder vote during training.",
+  "options": {
+    "gender": [
+      "female",
+      "male"
+    ],
+    "occupation": [
+      "Accountant/Finance Professional",
+      "Engineer/IT Specialist",
+      "General Labourer",
+      "Homemaker/Student",
+      "Manager/Executive",
+      "Office Worker/Civil Servant",
+      "Retired",
+      "Sales/Business Development",
+      "Small Business Owner",
+      "Teacher/Lecturer"
+    ],
+    "origin_province": [
+      "Bulawayo",
+      "Harare",
+      "Manicaland",
+      "Mashonaland Central",
+      "Mashonaland East",
+      "Mashonaland West",
+      "Masvingo",
+      "Matabeleland North",
+      "Matabeleland South",
+      "Midlands"
+    ],
+    "married": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "active_member": [
+      "yes",
+      "no"
+    ],
+    "customer_segment": [
+      "Affluent",
+      "Emerging",
+      "Mass",
+      "Priority"
+    ],
+    "loyalty_level": [
+      "Bronze",
+      "Gold",
+      "Silver"
+    ]
+  }
+}

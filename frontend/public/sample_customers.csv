@@ -1,0 +1,3 @@
+id,credit_sco,gender,age,occupation,balance_usd,monthly_income_usd,tenure_ye,married,nums_card,nums_service,active_member,last_active_date,last_transaction_month_usd,created_date,customer_segment,engagement_score,loyalty_level
+EX-RET,725,female,41,Teacher/Lecturer,4200,900,3,1,2,4,yes,2025-06-20,640,2022-04-11,Emerging,68,Silver
+EX-RISK,610,male,52,General Labourer,180,240,1,1,1,1,no,2024-11-02,0,2024-08-01,Mass,14,Bronze
